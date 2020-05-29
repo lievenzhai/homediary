@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{name}}的日记</title>
+    <title>{{user.name}}的日记</title>
     <link rel="icon" href="{{url_for('static', filename='zj02.jpg')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
 </head>
 <body>
     <h2>
         <img alt="全家福" class="avatar" src="{{url_for('static', filename='fam03.jpg')}}"><br>
-        {{name}}的日记
+        {{user.name}}的日记
     </h2>
     <p>你一共写了{{diaries|length}}篇日记</p>
     <ul class="diary-list">

@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{user.name}}的日记</title>
-    <link rel="icon" href="{{url_for('static', filename='zj02.jpg')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
-</head>
-<body>
-    <h2>
-        <img alt="全家福" class="avatar" src="{{url_for('static', filename='fam03.jpg')}}"><br>
-        {{user.name}}的日记
-    </h2>
+{% extends 'base.html' %}
+
+{% block content %}
     <p>你一共写了{{diaries|length}}篇日记</p>
     <ul class="diary-list">
         {% for diary in diaries %}
             <li>{{diary.date}}-{{diary.title}}</li>
         {% endfor %}
     </ul>
-    <footer>
-        <small>&copy;2020<a href="{{url_for('index')}}">翟子晶晶的家</a></small>
-    </footer>
-</body>
-</html>
+{% endblock %}}

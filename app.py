@@ -33,11 +33,20 @@ diaries1 = [
 ]
 
 
+@app.context_processor
+def inject_user():
+    user = User.query.first()
+    return dict(user=user)
+
+
 @app.route('/')
 def index():
-    user = User.query.first()
     diarys = Diary.query.all()
-    return render_template('index.html', user=user, diaries=diarys)
+    return render_template('index.html', diaries=diarys)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 app.run()
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.name}}的日记</title>
+    <link rel="icon" href="{{url_for('static', filename='zj02.jpg')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
+    {% endblock %}
+</head>
+<body>
+    <h2>
+        <img alt="全家福" class="avatar" src="{{url_for('static', filename='fam03.jpg')}}"><br>
+        {{user.name}}的日记
+    </h2>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <small>&copy;2020<a href="{{url_for('index')}}">翟子晶晶的家</a></small>
+    </footer>
+</body>
+</html>

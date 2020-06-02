@@ -53,3 +53,35 @@ nav li a {
 nav li a:hover {
     background-color: #111;
 }
+input[type=submit]{
+    font-family: inherit;
+}
+input[type=text]{
+    border: 1px solid #ddd;
+}
+.btn{
+    font-size: 12px;
+    padding: 3px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 1px solid #555555;
+    border-radius: 5px;
+}
+.btn:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+textarea{
+    width: 580px;
+}
+.float-right{
+    float: right;
+}
+.inline-form{
+    display: inline;
+}
+

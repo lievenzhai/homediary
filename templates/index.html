@@ -2,9 +2,20 @@
 
 {% block content %}
     <p>你一共写了{{diaries|length}}篇日记</p>
+    <a href="{{ url_for('diary') }}">
+        <button>新建日记</button>
+    </a>
     <ul class="diary-list">
         {% for diary in diaries %}
-            <li>{{diary.date}}-{{diary.title}}</li>
+            <li>
+                {{diary.date}}-{{diary.title}}
+                <span class="float-right">
+                    <a class="btn" href="{{ url_for('edit', diary_id=diary.id ) }}" target="_blank" title="编辑这厮">编辑</a>
+                    <form class="inline-form" method="post" action="{{ url_for('delete', diary_id=diary.id) }}">
+                        <input type="submit" class="btn" name="delete" value="删除" onclick="return confirm('你真的确定删除吗？')">
+                    </form>
+                </span>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}}

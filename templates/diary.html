@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post">
+    <form method="post" name="username">
         标题<input type="text" name="title" autocomplete="off" autofocus="autofocus" required><br>
         <textarea autofocus="autofocus" name="article" required rows="15"></textarea><br>
         <input class="btn" type="submit" name="submit" value="提交">

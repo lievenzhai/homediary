@@ -12,7 +12,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATTONS'] = False  # 关闭对模型修改的监控
 app.config['SECRET_KEY'] = 'dev'
-app.secret_key = 'dev'
 
 
 db = SQLAlchemy(app)

@@ -11,7 +11,9 @@
 </head>
 <body>
     {% for message in get_flashed_messages() %}
-        <div class="alert">{{message}}</div>
+        <div class="alert alert-success" style="text-align: center">
+            <strong>{{ message }}</strong>
+        </div>
     {% endfor %}
     <h2>
         <img alt="全家福" class="avatar" src="{{url_for('static', filename='fam03.jpg')}}"><br>

@@ -11,10 +11,11 @@ app = Flask(__name__)
 # 写入了一个 SQLALCHEMY_DATABASE_URI 变量来告诉 SQLAlchemy 数据库连接地址
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.root_path, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATTONS'] = False  # 关闭对模型修改的监控
+app.config['SECRET_KEY'] = 'dev'
+app.secret_key = 'dev'
 
 
 db = SQLAlchemy(app)
-app.config['SECRET_KEY'] = 'dev'
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
